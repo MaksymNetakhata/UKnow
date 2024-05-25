@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
 class NavMenu extends Component {
@@ -22,24 +23,22 @@ class NavMenu extends Component {
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container">
                     <span className="navbar-brand">uKnow</span>
+                    <button className="navbar-toggler" type="button" onClick={this.toggleNavbar}>
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
                     <div className={`collapse navbar-collapse ${collapsed ? '' : 'show'}`} id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <button className="nav-button" onClick={() => window.location.href = "/"}>Головна
-                                </button>
+                                <Link className="nav-link" to="/">Головна</Link>
                             </li>
                             <li className="nav-item">
-                                <button className="nav-button" onClick={() => window.location.href = "/Quiz"}>Тести
-                                </button>
+                                <Link className="nav-link" to="/Quiz">Тести</Link>
                             </li>
                             <li className="nav-item">
-                                <button className="nav-button"
-                                        onClick={() => window.location.href = "/Profile"}>Профіль
-                                </button>
+                                <Link className="nav-link" to="/Profile">Профіль</Link>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </nav>
         );

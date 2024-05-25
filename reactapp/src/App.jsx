@@ -65,7 +65,7 @@ export class Home extends Component {
                 <NavMenu />
                 <div className="home-container">
                     <h1 className="title">Вивчення мови за допомогою тестів</h1>
-                    <button className="btn btn-primary" onClick={this.navigateToQuiz}>Перейти до тестів</button>
+                    <button className="dark-button" onClick={this.navigateToQuiz}>Перейти до тестів</button>
                 </div>
                 <NewsComponent/>
             </div>
