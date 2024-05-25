@@ -29,7 +29,10 @@ namespace Identification
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
                 options.EmitStaticAudienceClaim = true;
-            });
+            }).AddInMemoryIdentityResources(SD.IdentityResources)
+            .AddInMemoryApiScopes(SD.ApiScopes)
+            .AddInMemoryClients(SD.Clients).AddAspNetIdentity<ApplicationUser>()
+            .AddDeveloperSigningCredential();
 
             var app = builder.Build();
 
