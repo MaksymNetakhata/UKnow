@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import NavMenu from "./NavMenu.jsx";
 
-
-
 class NewsComponent extends Component {
     constructor(props) {
         super(props);
@@ -27,8 +25,8 @@ class NewsComponent extends Component {
         return (
             <div className="news-container">
                 <div className="news-header">
-                    <h2>Оберіть мову:</h2>
-                    <select className="language-select" value={selectedLanguage} onChange={this.changeLanguage}>
+                    <h2 style={{color:'black'}}>Оберіть мову:</h2>
+                    <select className="language-select" style={{color:'black'}} value={selectedLanguage} onChange={this.changeLanguage}>
                         <option value="ua">Український</option>
                         <option value="en">English</option>
                         <option value="es">Español</option>

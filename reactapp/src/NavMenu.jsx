@@ -18,31 +18,35 @@ class NavMenu extends Component {
 
     render() {
         const { collapsed } = this.state;
-
         return (
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container">
-                    <span className="navbar-brand">uKnow</span>
-                    <button className="navbar-toggler" type="button" onClick={this.toggleNavbar}>
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <div className="brand">
+                    <span>uKnow</span>
+                    </div>
                     <div className={`collapse navbar-collapse ${collapsed ? '' : 'show'}`} id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
+                        <ul className="navbar-nav ">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Головна</Link>
+                                <button className="nav-button" onClick={() => window.location.href = "/"}>ГОЛОВНА
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Quiz">Тести</Link>
+                                <button className="nav-button" onClick={() => window.location.href = "/Quiz"}>ТЕСТИ
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Profile">Профіль</Link>
+                                <button className="nav-button"
+                                        onClick={() => window.location.href = "/Profile"}>ПРОФІЛЬ
+                                </button>
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </nav>
         );
     }
 }
+
 
 export default NavMenu;

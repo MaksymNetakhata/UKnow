@@ -1,32 +1,56 @@
-
 .navbar {
     background-color: #FFA200;
 }
-
-.navbar-brand {
-    font-size: 1.5rem;
+.container
+{
+    justify-content: space-between;
+    align-items: center;
+}
+.brand {
+    font-size: 30px;
+    color: white;
+    
 }
 
 .navbar-nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    
 }
 
 .nav-item {
     list-style-type: none;
-    margin-right: 10px; 
+    margin-left: 40px;
+    position: relative;
+    left: 500px;
+   bottom: 20px;
 }
 
-.nav-button {
-    background-color: transparent;
-    border: none;
+.nav-link {
     color: #fff;
     cursor: pointer;
     padding: 0;
     font-size: 16px;
+    text-decoration: none;
 }
 
-.nav-button:hover {
+.nav-link:hover {
     text-decoration: underline;
+}
+
+.navbar-toggler {
+    border: none;
+}
+.nav-button
+{
+        background-color: transparent; 
+        border: none; /* Убирает границу */
+        color: #ffffff; /* Устанавливает цвет текста */
+        cursor: pointer; /* Устанавливает курсор-указатель */
+        padding: 0; /* Убирает внутренние отступы */
+        font-size: 20px; /* Устанавливает размер текста */
+        text-align: right; /* Выравнивает текст по правому краю */
+    margin: 0;
+   
 }
