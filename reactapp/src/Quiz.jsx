@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-function HelloWorld() {
+const Quiz = () => {
     return (
         <div>
-            <h1>Hello, World!</h1>
+            <h1>Quiz Page</h1>
         </div>
     );
-}
+};
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+export default Quiz;
