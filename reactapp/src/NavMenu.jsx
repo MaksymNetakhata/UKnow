@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Collapse, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+
 import './NavMenu.css';
+
 
 class NavMenu extends Component {
     constructor(props) {
@@ -17,33 +19,28 @@ class NavMenu extends Component {
     };
 
     render() {
-        const { collapsed } = this.state;
+        const {collapsed} = this.state;
         return (
-            <nav className="navbar navbar-dark bg-dark">
-                <div className="container">
-                    <div className="brand">
-                    <span>uKnow</span>
+            <div> 
+                <Navbar className="navbar navbar-dark bg-dark">
+                    <div className="container">
+                        <NavbarBrand href="/" className="navbar-brand">uKnow</NavbarBrand>
+                        <Collapse isOpen={!collapsed} navbar>
+                            <ul className="navbar-nav">
+                                <NavItem className="nav-item">
+                                    <NavLink href="/" className="nav-button">Головна</NavLink>
+                                </NavItem>
+                                <NavItem className="nav-item">
+                                    <NavLink href="/Quiz" className="nav-button">Тести</NavLink>
+                                </NavItem>
+                                <NavItem className="nav-item">
+                                    <NavLink href="/Profile" className="nav-button">Профіль</NavLink>
+                                </NavItem>
+                            </ul>
+                        </Collapse>
                     </div>
-                    <div className={`collapse navbar-collapse ${collapsed ? '' : 'show'}`} id="navbarSupportedContent">
-                        <ul className="navbar-nav ">
-                            <li className="nav-item">
-                                <button className="nav-button" onClick={() => window.location.href = "/"}>ГОЛОВНА
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button className="nav-button" onClick={() => window.location.href = "/Quiz"}>ТЕСТИ
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button className="nav-button"
-                                        onClick={() => window.location.href = "/Profile"}>ПРОФІЛЬ
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
+                </Navbar>
+            </div>
         );
     }
 }

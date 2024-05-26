@@ -6,10 +6,12 @@
     justify-content: space-between;
     align-items: center;
 }
-.brand {
+.navbar-brand {
     font-size: 30px;
     color: white;
-    
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
 }
 
 .navbar-nav {
@@ -23,8 +25,8 @@
     list-style-type: none;
     margin-left: 40px;
     position: relative;
-    left: 500px;
-   bottom: 20px;
+    left: 700px;
+   bottom: 30px;
 }
 
 .nav-link {
@@ -35,9 +37,11 @@
     text-decoration: none;
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+.nav-link:hover,
+.nav-button:hover {
+    text-decoration: none;
 }
+
 
 .navbar-toggler {
     border: none;
@@ -45,12 +49,12 @@
 .nav-button
 {
         background-color: transparent; 
-        border: none; /* Убирает границу */
-        color: #ffffff; /* Устанавливает цвет текста */
-        cursor: pointer; /* Устанавливает курсор-указатель */
-        padding: 0; /* Убирает внутренние отступы */
-        font-size: 20px; /* Устанавливает размер текста */
-        text-align: right; /* Выравнивает текст по правому краю */
+        border: none; 
+        color: #ffffff; 
+        cursor: pointer; 
+        padding: 0; 
+        font-size: 20px;
+        text-align: right; 
     margin: 0;
-   
+    text-decoration: none;
 }

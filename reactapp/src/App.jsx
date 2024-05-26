@@ -64,6 +64,10 @@ export class Home extends Component {
                 <div className="home-container">
                     <h1 className="title">Вивчення мови за допомогою тестів</h1>
                     <button className="dark-button" onClick={this.navigateToQuiz}>Перейти до тестів</button>
+                    {/* <Routes>
+                        <Route path='/quiz' element={<Quiz />} />
+                        <Route path='/profile' element={<Profile />} />
+                    </Routes> */}
                 </div>
                 <NewsComponent/>
             </div>
