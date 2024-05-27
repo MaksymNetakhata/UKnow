@@ -1,4 +1,5 @@
 using Identification.Data;
+using Identification.IDbInitializerF;
 using Identification.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,8 @@ namespace Identification
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+            builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddRazorPages();
 
@@ -47,6 +50,8 @@ namespace Identification
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            SeedDatabase();
+
             app.UseRouting();
             app.UseIdentityServer();
 
@@ -58,6 +63,16 @@ namespace Identification
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+
+            void SeedDatabase()
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+                    dbInitializer.Initialize();
+                }
+            }
         }
     }
 }

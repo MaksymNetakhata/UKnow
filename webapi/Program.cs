@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using UKnow.Data;
 
@@ -11,6 +12,25 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication
+    (options =>
+    {
+        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = "oidc";
+    }).AddOpenIdConnect("oidc", options =>
+    {
+        options.Authority = builder.Configuration["ServiceUrls:IdentityAPI"];
+        options.GetClaimsFromUserInfoEndpoint = true;
+        options.ClientId = "teacher";
+        options.ClientSecret = "secret";
+        options.ResponseMode = "code";
+
+        options.TokenValidationParameters.NameClaimType = "name";
+        options.TokenValidationParameters.RoleClaimType = "role";
+        options.Scope.Add("teacher");
+        options.SaveTokens = true;
+    }); 
 
 var app = builder.Build();
 

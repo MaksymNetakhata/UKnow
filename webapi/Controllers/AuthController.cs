@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UKnow.Data;
 using webapi.DTO;
 using webapi.Utility;
@@ -26,7 +27,7 @@ namespace webapi.Controllers
                 Password = hashedPassword,
                 Name = model.Name
             };
-            
+
             _context.User.Add(user);
             _context.SaveChanges();
 
@@ -34,8 +35,10 @@ namespace webapi.Controllers
         }
 
         [HttpPost("login")]
+        [Authorize]
         public IActionResult Login([FromBody] LoginModel model)
         {
+
             var user = _context.User.SingleOrDefault(u => u.Email == model.Email);
             if (user == null)
             {
