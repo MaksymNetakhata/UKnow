@@ -1,3 +1,4 @@
+using Duende.IdentityServer.Services;
 using Identification.Data;
 using Identification.IDbInitializerF;
 using Identification.Models;
@@ -24,6 +25,7 @@ namespace Identification
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddRazorPages();
+            
 
             builder.Services.AddIdentityServer(options => 
             {
@@ -35,7 +37,9 @@ namespace Identification
             }).AddInMemoryIdentityResources(SD.IdentityResources)
             .AddInMemoryApiScopes(SD.ApiScopes)
             .AddInMemoryClients(SD.Clients).AddAspNetIdentity<ApplicationUser>()
-            .AddDeveloperSigningCredential();
+            .AddDeveloperSigningCredential().AddProfileService<ProfileService>();
+
+            builder.Services.AddScoped<IProfileService, ProfileService>();
 
             var app = builder.Build();
 

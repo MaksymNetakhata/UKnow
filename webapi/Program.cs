@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using UKnow.Data;
@@ -30,6 +31,8 @@ builder.Services.AddAuthentication
         options.TokenValidationParameters.RoleClaimType = "role";
         options.Scope.Add("teacher");
         options.SaveTokens = true;
+
+        options.ClaimActions.MapJsonKey("role", "role");
     }); 
 
 var app = builder.Build();

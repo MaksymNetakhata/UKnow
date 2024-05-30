@@ -1,5 +1,6 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
+using IdentityModel;
 using static System.Net.WebRequestMethods;
 
 namespace Identification
@@ -47,7 +48,8 @@ namespace Identification
                 AllowedScopes = { "teacher", 
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    IdentityServerConstants.StandardScopes.Email
+                    IdentityServerConstants.StandardScopes.Email,
+                    JwtClaimTypes.Role
                 },
                 RedirectUris = {"https://localhost:7135/signin-oidc" },
                 PostLogoutRedirectUris={ "https://localhost:7135/signout-callback-oidc" }
