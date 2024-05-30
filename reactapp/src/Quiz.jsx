@@ -1,9 +1,19 @@
 import React from 'react';
+import NavMenu from "./NavMenu.jsx";
+import {Link} from "react-router-dom";
+import './Quiz.css';
 
 const Quiz = () => {
     return (
         <div>
-            <h1>Quiz Page</h1>
+            <NavMenu/>
+            <div className="text">
+                <h1 className="quiz-title">Оберіть тест:</h1>
+                <ul className="test-cont">
+                    <li><Link to="/quiz1">Тест 1</Link></li>
+                    <li><Link to="/quiz2">Тест 2</Link></li>
+                </ul>
+            </div>
         </div>
     );
 };

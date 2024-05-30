@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import NavMenu from "./NavMenu.jsx";
+import {Link} from "react-router-dom";
 
 class NewsComponent extends Component {
     constructor(props) {
@@ -11,22 +12,24 @@ class NewsComponent extends Component {
     }
 
     changeLanguage = (event) => {
-        this.setState({ selectedLanguage: event.target.value });
+        this.setState({selectedLanguage: event.target.value});
     };
+
     render() {
-        const { selectedLanguage } = this.state;
+        const {selectedLanguage} = this.state;
         const newsItems = [
-            { language: 'ua', title: 'Новина на українській мові', description: 'Опис новини.' },
-            { language: 'en', title: 'News in English', description: 'Description of the news.' },
-            { language: 'es', title: 'Noticia en Español', description: 'Descripción de la noticia.' },
-            { language: 'fr', title: 'Nouvelle en Français', description: 'Description de la nouvelle.' },
+            {language: 'ua', title: 'Новина на українській мові', description: 'Опис новини.'},
+            {language: 'en', title: 'News in English', description: 'Description of the news.'},
+            {language: 'es', title: 'Noticia en Español', description: 'Descripción de la noticia.'},
+            {language: 'fr', title: 'Nouvelle en Français', description: 'Description de la nouvelle.'},
         ];
 
         return (
             <div className="news-container">
                 <div className="news-header">
-                    <h2 style={{color:'black'}}>Оберіть мову:</h2>
-                    <select className="language-select" style={{color:'black'}} value={selectedLanguage} onChange={this.changeLanguage}>
+                    <h2 style={{color: 'black'}}>Оберіть мову:</h2>
+                    <select className="language-select" style={{color: 'black'}} value={selectedLanguage}
+                            onChange={this.changeLanguage}>
                         <option value="ua">Український</option>
                         <option value="en">English</option>
                         <option value="es">Español</option>
@@ -50,29 +53,18 @@ class NewsComponent extends Component {
 }
 
 
+export function Home() {
 
-export class Home extends Component {
-    static displayName = Home.name;
-    navigateToQuiz = () => {
-        
-        window.location.href = "/Quiz"; 
-    };
-    render() {
-        return (
-            <div>
-                <NavMenu />
-                <div className="home-container">
-                    <h1 className="title">Вивчення мови за допомогою тестів</h1>
-                    <button className="dark-button" onClick={this.navigateToQuiz}>Перейти до тестів</button>
-                    {/* <Routes>
-                        <Route path='/quiz' element={<Quiz />} />
-                        <Route path='/profile' element={<Profile />} />
-                    </Routes> */}
-                </div>
-                <NewsComponent/>
+    return (
+        <div>
+            <NavMenu/>
+            <div className="home-container">
+                <h1 className="title">Вивчення мови за допомогою тестів</h1>
+                <Link className="dark-button" to="/Quiz">Перейти до тестів</Link>
             </div>
-        );
-    }
+            <NewsComponent/>
+        </div>
+    );
 }
 
 export default Home;
