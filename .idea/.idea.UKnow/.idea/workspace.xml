@@ -12,18 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/reactapp/src/Profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactapp/src/Quiz.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactapp/src/Tests.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/AppRoutes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/NavMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/NavMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/Quiz.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Quiz.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -61,29 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maximka&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.reactapp: run.executor&quot;: &quot;Run&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.webapi: http.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "maximka",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.reactapp: run.executor": "Run",
+    "ts.external.directory.path": "/Applications/Rider.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/valeriya/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/valeriya/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.7132018" />
   </component>
@@ -200,7 +195,11 @@
       <workItem from="1717006206756" duration="96000" />
       <workItem from="1717006325719" duration="5964000" />
       <workItem from="1717065188569" duration="347000" />
-      <workItem from="1717087315582" duration="8089000" />
+      <workItem from="1717087315582" duration="8217000" />
+      <workItem from="1717104007117" duration="161000" />
+      <workItem from="1717154116568" duration="1357000" />
+      <workItem from="1717163826803" duration="816000" />
+      <workItem from="1717176621435" duration="3948000" />
     </task>
     <task id="LOCAL-00001" summary="add ...">
       <option name="closed" value="true" />
@@ -242,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716755500829</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="features and log_reg">
+      <option name="closed" value="true" />
+      <created>1717102944300</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717102944300</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +263,7 @@
     <MESSAGE value="add something2" />
     <MESSAGE value="nothing change" />
     <MESSAGE value="nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
+    <MESSAGE value="features and log_reg" />
+    <option name="LAST_COMMIT_MESSAGE" value="features and log_reg" />
   </component>
 </project>
