@@ -131,7 +131,8 @@ public class Index : PageModel
                     DisplayName = user.UserName
                 };
 
-                //await HttpContext.SignInAsync(isuser, props);
+                await HttpContext.SignInAsync(isuser, props);
+                var accessToken = await HttpContext.GetTokenAsync("access_token");
 
                 if (context != null)
                 {

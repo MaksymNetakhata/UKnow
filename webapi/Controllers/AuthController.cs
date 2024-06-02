@@ -5,6 +5,7 @@ using UKnow.Data;
 using webapi.DTO;
 using webapi.Utility;
 
+
 namespace webapi.Controllers
 {
     public class AuthController : Controller
@@ -39,6 +40,7 @@ namespace webapi.Controllers
         [Authorize]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
+            
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             return RedirectToAction(nameof(Index), "Home");
 
@@ -59,6 +61,14 @@ namespace webapi.Controllers
             await HttpContext.SignOutAsync();
             SignOut("Cookies", "oidc");
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet("request")]
+        public async Task<string> Request()
+        {
+            var res = new Gemini();
+            string response = await res.GetResponse();
+            return response;
         }
 
 
