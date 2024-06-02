@@ -4,7 +4,9 @@ using UKnow.Data;
 
 namespace webapi.Controllers
 {
-    public class TestController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class TestController : ControllerBase
     {
         private readonly AppDbContext _context;
 
@@ -13,9 +15,10 @@ namespace webapi.Controllers
             _context = context;
         }
 
-        [HttpGet("test")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Test>>> GetTests()
         {
+            var asr = HttpContext.Request;
             return Ok(await _context.Test.ToListAsync());
         }
     }

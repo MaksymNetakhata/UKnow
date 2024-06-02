@@ -1,4 +1,3 @@
-import React from 'react';
 import NavMenu from "./NavMenu.jsx";
 import {Link} from "react-router-dom";
 import './Quiz.css';
