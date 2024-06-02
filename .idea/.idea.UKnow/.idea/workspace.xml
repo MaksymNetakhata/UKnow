@@ -13,7 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Tests.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/services/fetchTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/services/fetchTest.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
     &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maximka&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TestMeasure&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -199,6 +202,8 @@
       <workItem from="1717242920963" duration="2693000" />
       <workItem from="1717263920781" duration="3770000" />
       <workItem from="1717320884778" duration="5733000" />
+      <workItem from="1717338723904" duration="45000" />
+      <workItem from="1717349028899" duration="1411000" />
     </task>
     <task id="LOCAL-00001" summary="add ...">
       <option name="closed" value="true" />
@@ -271,6 +276,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add ..." />
