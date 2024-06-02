@@ -1,0 +1,135 @@
+.navbar {
+    background-color: #FFA200;
+    background-size: cover;
+    width: 100%;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+}
+.container
+{
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    display: inline;
+}
+.navbar-brand {
+    font-size: 30px;
+    color: white;
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    top: 1000px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+   
+    
+}
+.nav-item {
+    list-style-type: none;
+    margin-left: 40px;
+    position: relative;
+    left: 700px;
+   bottom: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-button:hover {
+    text-decoration: none;
+}
+
+
+.navbar-toggler {
+    border: none;
+}
+.nav-button
+{
+        background-color: transparent; 
+        border: none; 
+        color: #ffffff; 
+        cursor: pointer; 
+        padding: 0; 
+        font-size: 20px;
+        text-align: right; 
+    margin: 0;
+    text-decoration: none;
+}
+:root {
+    --navheight : 60px;
+    --white :#fff;
+    --black :#000;
+    --navbg: rgba(162, 102, 72, 0.53);
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family:Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-image:url('https://images.pexels.com/photos/251603/pexels-photo-251603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size:cover;
+}
+
+nav {
+    height:var(--navheight);
+    border-bottom:1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin:0 auto 0px;
+    background-color: var(--navbg);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+nav h4 {
+    color:var(--white);
+    line-height:var(--navheight);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    float:left;
+    padding:0px 60px;
+   
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: var(--white);
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+.nav-button {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 22px 12px;
+}
