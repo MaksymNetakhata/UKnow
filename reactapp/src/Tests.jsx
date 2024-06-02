@@ -8,6 +8,7 @@ const Test = () => {
         const fetchData = async () => {
             try {
                 const data = await fetchTest();
+                console.log('Fetched data:', data);
                 setTestData(data);
             } catch (err) {
                 setError('Failed to fetch test data.');
@@ -22,33 +23,17 @@ const Test = () => {
             {error && <p>{error}</p>}
             {testData ? (
                 <ul>
-                    <li key={testData[0].id}>
-                        <h2>{testData[0].Question}</h2>
-                        <ul>
-                            <li>{testData[0].Option1}</li>
-                            <li>{testData[0].Option2}</li>
-                            <li>{testData[0].Option3}</li>
-                        </ul>
-                        <p>Correct Answer: {testData[0].CorrectAnswer}</p>
-                    </li>
-                    <li key={testData[1].id}>
-                        <h2>{testData[1].Question}</h2>
-                        <ul>
-                            <li>{testData[1].Option1}</li>
-                            <li>{testData[1].Option2}</li>
-                            <li>{testData[1].Option3}</li>
-                        </ul>
-                        <p>Correct Answer: {testData[1].CorrectAnswer}</p>
-                    </li>
-                    <li key={testData[2].id}>
-                        <h2>{testData[2].Question}</h2>
-                        <ul>
-                            <li>{testData[2].Option1}</li>
-                            <li>{testData[2].Option2}</li>
-                            <li>{testData[2].Option3}</li>
-                        </ul>
-                        <p>Correct Answer: {testData[2].CorrectAnswer}</p>
-                    </li>
+                    {testData.map((test) => (
+                        <li key={test.id}>
+                            <h2>{test.question}</h2>
+                            <ul>
+                                <li>{test.option1}</li>
+                                <li>{test.option2}</li>
+                                <li>{test.option3}</li>
+                            </ul>
+                            <p>Correct Answer: {test.CorrectAnswer}</p>
+                        </li>
+                    ))}
                 </ul>
             ) : (
                 <p>Loading...</p>
