@@ -13,7 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Tests.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
     &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maximka&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TestMeasure&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -78,7 +78,7 @@
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.7132018" />
   </component>
-  <component name="RunManager" selected="npm.reactapp: run">
+  <component name="RunManager" selected=".NET Launch Settings Profile.webapi: http">
     <configuration name="Identification: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Identification/Identification.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -199,6 +199,9 @@
       <workItem from="1717242920963" duration="2693000" />
       <workItem from="1717263920781" duration="3770000" />
       <workItem from="1717320884778" duration="5733000" />
+      <workItem from="1717338723904" duration="45000" />
+      <workItem from="1717349028899" duration="12161000" />
+      <workItem from="1717371043970" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="add ...">
       <option name="closed" value="true" />
@@ -264,13 +267,40 @@
       <option name="project" value="LOCAL" />
       <updated>1717267730736</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="tests">
+      <option name="closed" value="true" />
+      <created>1717354413328</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717354413328</updated>
+    </task>
+    <task id="LOCAL-00010" summary="тестыыы">
+      <option name="closed" value="true" />
+      <created>1717370792703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717370792703</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add ..." />
@@ -281,6 +311,8 @@
     <MESSAGE value="features and log_reg" />
     <MESSAGE value="add changes" />
     <MESSAGE value="добавіла" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавіла" />
+    <MESSAGE value="tests" />
+    <MESSAGE value="тестыыы" />
+    <option name="LAST_COMMIT_MESSAGE" value="тестыыы" />
   </component>
 </project>

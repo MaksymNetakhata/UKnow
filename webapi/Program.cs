@@ -13,6 +13,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("https://localhost:5173");
+        policy.AllowAnyMethod();
+        policy.AllowAnyHeader();
+    });
+});
 
 builder.Services.AddAuthentication
     (options =>
@@ -35,15 +44,7 @@ builder.Services.AddAuthentication
         options.ClaimActions.MapJsonKey("role", "role");
     });
 
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.WithOrigins("https://localhost:5173");
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-    });
-});
+
 
 var app = builder.Build();
 
