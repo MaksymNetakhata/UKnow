@@ -7,7 +7,7 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp", "reactapp\reacta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csproj", "{6A2FF73F-703A-4747-AE38-1DF793AEA788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identification", "Identification\Identification.csproj", "{7E89DE92-72ED-496C-8355-9DBE767DC476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identification", "Identification\Identification.csproj", "{7E89DE92-72ED-496C-8355-9DBE767DC476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
