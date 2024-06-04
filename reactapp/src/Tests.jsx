@@ -90,7 +90,7 @@ const Test = () => {
                     <p>Loading...</p>
                 )}
             </div>
-            <button type="submit">Check
+            <button type="submit" className="check-button">Check
                 {score !== null && <p>Your score: {score} out of {testData.length}</p>}
             </button>
            

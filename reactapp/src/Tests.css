@@ -28,7 +28,7 @@ ul {
     margin: 5px 0;
 }
 
-button {
+.check-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -40,6 +40,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.check-button:hover {
     background-color: #218838;
 }
