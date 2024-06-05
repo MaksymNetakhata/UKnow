@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UKnow.Data;
 using webapi.DTO;
@@ -38,9 +39,9 @@ namespace webapi.Controllers
 
         [HttpPost("login")]
         [Authorize]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
+        public async Task<IActionResult> Login()
         {
-            
+
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             return RedirectToAction(nameof(Index), "Home");
 
@@ -50,7 +51,7 @@ namespace webapi.Controllers
             //    return Unauthorized();
             //}
 
-            
+
             //return Ok(new { message = "Login successful" });
             //var token = GenerateToken(user);
             //return Ok(new { token });

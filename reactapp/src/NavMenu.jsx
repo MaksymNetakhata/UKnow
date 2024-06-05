@@ -1,31 +1,40 @@
-import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import {Collapse, Navbar, NavbarBrand, NavItem} from 'reactstrap';
 import './NavMenu.css';
+import { useState } from "react";
+import { login } from "./services/Login";
 
 
-class NavMenu extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapsed: true
-        };
-    }
+
+const NavMenu = () => {
+
+    const [isAuthorized, setAuthorized] = useState(false);
+
+    const handleLogin = async() => {
+        await login();
+        setAuthorized(true);
+    };
 
 
-    render() {
-        const {collapsed} = this.state;
         return (
             <nav className="nav-menu">
                 <h4><Link to="/" className="navbar-brand">uKnow</Link></h4>
                 <ul>
                     <li><Link to="/" className="nav-button">Головна</Link></li>
                     <li><Link to="/Quiz" className="nav-button">Тести</Link></li>
-                    <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
+                    {isAuthorized &&(
+                        <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
+                    )}
+                    {!isAuthorized &&(
+                        <li><button onClick={handleLogin}>Увійти</button></li>
+                    )}
+                    
                 </ul>
             </nav>
         );
-        {/*} <div>
+        
+        
+}
+/*} <div>
             <div className="navbar ">
                 <div className="container">
                     <Link to="/" className="navbar-brand">uKnow</Link>
@@ -44,9 +53,6 @@ class NavMenu extends Component {
                 </div>
             </div>
         );*/
-        }
-    }
-}
 
 
 export default NavMenu;

@@ -25,7 +25,17 @@ namespace Identification
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddRazorPages();
-            
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins("https://localhost:5173", "https://localhost:7135");
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyHeader();
+                    policy.AllowCredentials();
+                });
+            });
 
             builder.Services.AddIdentityServer(options => 
             {
@@ -55,6 +65,8 @@ namespace Identification
             app.UseStaticFiles();
 
             SeedDatabase();
+
+            app.UseCors();
 
             app.UseRouting();
             app.UseIdentityServer();
