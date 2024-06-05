@@ -26,15 +26,15 @@ namespace Identification
 
             builder.Services.AddRazorPages();
 
-            builder.Services.AddCors(options =>
+           builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(policy =>
-                {
-                    policy.WithOrigins("https://localhost:5173", "https://localhost:7135");
-                    policy.AllowAnyMethod();
-                    policy.AllowAnyHeader();
-                    policy.AllowCredentials();
-                });
+                options.AddPolicy("AllowAllHeaders",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
             });
 
             builder.Services.AddIdentityServer(options => 
@@ -66,7 +66,7 @@ namespace Identification
 
             SeedDatabase();
 
-            app.UseCors();
+            app.UseCors("AllowAllHeaders");
 
             app.UseRouting();
             app.UseIdentityServer();

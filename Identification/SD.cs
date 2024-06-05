@@ -48,11 +48,13 @@ namespace Identification
                 AllowedScopes = { "teacher", 
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    IdentityServerConstants.StandardScopes.Email,
-                    JwtClaimTypes.Role
+                    IdentityServerConstants.StandardScopes.Email
+                    //JwtClaimTypes.Role
                 },
                 RedirectUris = {"https://localhost:7135/signin-oidc" },
-                PostLogoutRedirectUris={ "https://localhost:7135/signout-callback-oidc" }
+                PostLogoutRedirectUris={ "https://localhost:7135/signout-callback-oidc" },
+                RequirePkce = true,
+                AllowAccessTokensViaBrowser = true
             }
         };
     }

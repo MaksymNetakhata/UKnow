@@ -7,7 +7,7 @@ const headers = {
 export const login = async (username, password) => {
     try {
         const response = await axios.post(
-            'https://localhost:7135/login',
+            'https://localhost:7135/api/auth',
             { username, password },
             { headers }
         );

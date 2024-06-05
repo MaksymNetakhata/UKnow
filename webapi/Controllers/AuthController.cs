@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UKnow.Data;
@@ -9,7 +10,9 @@ using webapi.Utility;
 
 namespace webapi.Controllers
 {
-    public class AuthController : Controller
+    [ApiController]
+    [Route("auth")]
+    public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;
         private readonly PasswordHasher _passwordHasher;
@@ -38,12 +41,13 @@ namespace webapi.Controllers
         }
 
         [HttpPost("login")]
+        [EnableCors("AllowAllHeaders")]
         [Authorize]
-        public async Task<IActionResult> Login()
+        public async Task<ActionResult> Login()
         {
 
             var accessToken = await HttpContext.GetTokenAsync("access_token");
-            return RedirectToAction(nameof(Index), "Home");
+            return Ok();
 
             //var user = _context.User.SingleOrDefault(u => u.Email == model.Email);
             //if (user == null)
