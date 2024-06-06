@@ -10,7 +10,8 @@ const NavMenu = () => {
     const [isAuthorized, setAuthorized] = useState(false);
 
     const handleLogin = async() => {
-        await login();
+        const response = await login();
+        window.location.href = response;
         setAuthorized(true);
     };
 

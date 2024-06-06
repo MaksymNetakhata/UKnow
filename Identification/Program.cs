@@ -2,6 +2,7 @@ using Duende.IdentityServer.Services;
 using Identification.Data;
 using Identification.IDbInitializerF;
 using Identification.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,7 +38,7 @@ namespace Identification
                     });
             });
 
-            builder.Services.AddIdentityServer(options => 
+            builder.Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
@@ -47,7 +48,14 @@ namespace Identification
             }).AddInMemoryIdentityResources(SD.IdentityResources)
             .AddInMemoryApiScopes(SD.ApiScopes)
             .AddInMemoryClients(SD.Clients).AddAspNetIdentity<ApplicationUser>()
-            .AddDeveloperSigningCredential().AddProfileService<ProfileService>();
+            .AddDeveloperSigningCredential();//AddProfileService<ProfileService>();
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = "oidc";
+            }).AddCookie();
 
             builder.Services.AddScoped<IProfileService, ProfileService>();
 

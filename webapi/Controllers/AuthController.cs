@@ -23,24 +23,24 @@ namespace webapi.Controllers
             _passwordHasher = new PasswordHasher();
         }
 
-        [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterModel model)
-        {
-            var hashedPassword = _passwordHasher.Generate(model.Password);
-            var user = new User
-            {
-                Email = model.Email,
-                Password = hashedPassword,
-                Name = model.Name
-            };
+        //[HttpPost("register")]
+        //public IActionResult Register([FromBody] RegisterModel model)
+        //{
+        //    var hashedPassword = _passwordHasher.Generate(model.Password);
+        //    var user = new User
+        //    {
+        //        Email = model.Email,
+        //        Password = hashedPassword,
+        //        Name = model.Name
+        //    };
 
-            _context.User.Add(user);
-            _context.SaveChanges();
+        //    _context.User.Add(user);
+        //    _context.SaveChanges();
 
-            return Ok(new { message = "Registration successful" });
-        }
+        //    return Ok(new { message = "Registration successful" });
+        //}
 
-        [HttpPost("login")]
+        [HttpPost]
         [EnableCors("AllowAllHeaders")]
         [Authorize]
         public async Task<ActionResult> Login()
@@ -61,20 +61,20 @@ namespace webapi.Controllers
             //return Ok(new { token });
         }
 
-        public async Task<IActionResult> Logout()
-        {
-            await HttpContext.SignOutAsync();
-            SignOut("Cookies", "oidc");
-            return RedirectToAction("Index", "Home");
-        }
+        //public async Task<IActionResult> Logout()
+        //{
+        //    await HttpContext.SignOutAsync();
+        //    SignOut("Cookies", "oidc");
+        //    return RedirectToAction("Index", "Home");
+        //}
 
-        [HttpGet("request")]
-        public async Task<string> Request()
-        {
-            var res = new Gemini();
-            string response = await res.GetResponse();
-            return response;
-        }
+        //[HttpGet("request")]
+        //public async Task<string> Request()
+        //{
+        //    var res = new Gemini();
+        //    string response = await res.GetResponse();
+        //    return response;
+        //}
 
 
     }

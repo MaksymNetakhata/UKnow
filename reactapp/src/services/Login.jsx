@@ -1,23 +1,17 @@
 import axios from 'axios';
 
-const headers = {
-    "Content-Type": "application/json"
-};
 
-export const login = async (username, password) => {
+export const login = async () => {
     try {
         const response = await axios.post(
-            'https://localhost:7135/api/auth',
-            { username, password },
-            { headers }
+            'https://localhost:7135/auth',
         );
-        console.log(response.data);
 
         // Сохраняем токен в локальное хранилище
         localStorage.setItem('authToken', response.data.token);
 
         // Возвращаем данные ответа
-        return response.data;
+        return response.request.responseURL;
     } catch (error) {
         console.error('Login failed:', error);
         throw error;

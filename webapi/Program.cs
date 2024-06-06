@@ -31,21 +31,23 @@ builder.Services.AddAuthentication
     {
         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = "oidc";
+
     }).AddOpenIdConnect("oidc", options =>
     {
         options.Authority = builder.Configuration["ServiceUrls:IdentityAPI"];
         options.GetClaimsFromUserInfoEndpoint = true;
         options.ClientId = "teacher";
         options.ClientSecret = "secret";
-        options.ResponseMode = "code";
+        options.ResponseType = "code";
 
         options.TokenValidationParameters.NameClaimType = "name";
-        options.TokenValidationParameters.RoleClaimType = "role";
+        //options.TokenValidationParameters.RoleClaimType = "role";
         options.Scope.Add("teacher");
         options.SaveTokens = true;
 
-        options.ClaimActions.MapJsonKey("role", "role");
+        //options.ClaimActions.MapJsonKey("role", "role");
     });
+
 
 
 
@@ -61,7 +63,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAllHeaders");
 
-//app.UseAuthentication();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
