@@ -26,6 +26,17 @@ namespace Identification
 
             builder.Services.AddRazorPages();
             
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins("https://localhost:5173")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                });
+            });
+
 
             builder.Services.AddIdentityServer(options => 
             {
@@ -55,11 +66,13 @@ namespace Identification
             app.UseStaticFiles();
 
             SeedDatabase();
-
+            
             app.UseRouting();
+            app.UseCors();
             app.UseIdentityServer();
 
             app.UseAuthorization();
+            
 
             app.MapRazorPages();
             app.MapControllerRoute(

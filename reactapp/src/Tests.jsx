@@ -1,5 +1,6 @@
-import {useEffect, useState} from 'react';
-import { fetchTest} from "./services/fetchTest"
+import { useEffect, useState } from 'react';
+import { fetchTest } from "./services/fetchTest";
+import Modal from 'react-modal';
 import './Tests.css';
 
 const Test = () => {
@@ -7,6 +8,8 @@ const Test = () => {
     const [error, setError] = useState(null);
     const [answers, setAnswers] = useState({});
     const [score, setScore] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -19,12 +22,14 @@ const Test = () => {
         };
         fetchData();
     }, []);
+
     const handleAnswerChange = (questionId, answer) => {
         setAnswers(prevAnswers => ({
             ...prevAnswers,
             [questionId]: answer
         }));
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let correctAnswersCount = 0;
@@ -36,7 +41,13 @@ const Test = () => {
             }
         });
         setScore(correctAnswersCount);
+        setIsModalOpen(true);
     };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -82,7 +93,6 @@ const Test = () => {
                                         </label>
                                     </li>
                                 </ul>
-                              
                             </li>
                         ))}
                     </ul>
@@ -90,10 +100,21 @@ const Test = () => {
                     <p>Loading...</p>
                 )}
             </div>
-            <button type="submit" className="check-button">Check
-                {score !== null && <p>Your score: {score} out of {testData.length}</p>}
-            </button>
-           
+            <button type="submit" className="check-button">Перевірити</button>
+
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                contentLabel="Test Results"
+                className="modal"
+                overlayClassName="modal-overlay"
+            >
+                <button onClick={closeModal} className="close-button">X</button>
+                <h2 className="test-h2">Tестування</h2>
+                {score !== null && (
+                    <p>Ваш результат: {score} з {testData.length}</p>
+                )}
+            </Modal>
         </form>
     );
 };

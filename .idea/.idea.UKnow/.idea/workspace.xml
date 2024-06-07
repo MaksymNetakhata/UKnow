@@ -12,7 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/reactapp/src/services/login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Identification/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Identification/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/reactapp.esproj" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/reactapp.esproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/Tests.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Tests.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactapp/src/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Tests.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -40,7 +49,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -78,7 +87,7 @@
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.7132018" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Identification: https">
+  <component name="RunManager" selected=".NET Launch Settings Profile.webapi: http">
     <configuration name="Identification: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Identification/Identification.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -207,6 +216,10 @@
       <workItem from="1717521334503" duration="71000" />
       <workItem from="1717524520145" duration="232000" />
       <workItem from="1717584154194" duration="792000" />
+      <workItem from="1717609228915" duration="7788000" />
+      <workItem from="1717707231195" duration="61000" />
+      <workItem from="1717708360733" duration="3154000" />
+      <workItem from="1717755931117" duration="1707000" />
     </task>
     <task id="LOCAL-00001" summary="add ...">
       <option name="closed" value="true" />
