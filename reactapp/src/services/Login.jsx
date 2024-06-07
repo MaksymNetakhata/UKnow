@@ -6,6 +6,7 @@ export const login = async () => {
         const response = await axios.post(
             'https://localhost:7135/auth',
         );
+        console.log(response);
 
         // Сохраняем токен в локальное хранилище
         localStorage.setItem('authToken', response.data.token);
