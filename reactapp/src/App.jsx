@@ -1,59 +1,70 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import './App.css';
+import NavMenu from "./NavMenu.jsx";
+import {Link} from "react-router-dom";
 
-export default class App extends Component {
-    static displayName = App.name;
-
+class NewsComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { forecasts: [], loading: true };
+        this.state = {
+            selectedLanguage: 'ua',
+        };
     }
 
-    componentDidMount() {
-        this.populateWeatherData();
-    }
-
-    static renderForecastsTable(forecasts) {
-        return (
-            <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {forecasts.map(forecast =>
-                        <tr key={forecast.date}>
-                            <td>{forecast.date}</td>
-                            <td>{forecast.temperatureC}</td>
-                            <td>{forecast.temperatureF}</td>
-                            <td>{forecast.summary}</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        );
-    }
+    changeLanguage = (event) => {
+        this.setState({selectedLanguage: event.target.value});
+    };
 
     render() {
-        let contents = this.state.loading
-            ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-            : App.renderForecastsTable(this.state.forecasts);
+        const {selectedLanguage} = this.state;
+        const newsItems = [
+            {language: 'ua', title: 'Новина на українській мові', description: 'Опис новини.'},
+            {language: 'en', title: 'News in English', description: 'Description of the news.'},
+            {language: 'es', title: 'Noticia en Español', description: 'Descripción de la noticia.'},
+            {language: 'fr', title: 'Nouvelle en Français', description: 'Description de la nouvelle.'},
+        ];
 
         return (
-            <div>
-                <h1 id="tabelLabel" >Weather forecast</h1>
-                <p>This component demonstrates fetching data from the server.</p>
-                {contents}
+            <div className="news-container">
+                <div className="news-header">
+                    <h2 style={{color: 'black'}}>Оберіть мову:</h2>
+                    <select className="language-select" style={{color: 'black'}} value={selectedLanguage}
+                            onChange={this.changeLanguage}>
+                        <option value="ua">Український</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+
+                <div className="news-items">
+                    {newsItems
+                        .filter(item => item.language === selectedLanguage)
+                        .map((item, index) => (
+                            <div className="news-item" key={index}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+                        ))}
+                </div>
             </div>
         );
     }
-
-    async populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
-    }
 }
+
+
+export function Home() {
+
+    return (
+        <div>
+            <NavMenu/>
+            <div className="home-container">
+                <h1 className="title">Вивчення мови за допомогою тестів</h1>
+                <Link className="dark-button" to="/Quiz">Перейти до тестів</Link>
+            </div>
+            <NewsComponent/>
+        </div>
+    );
+}
+
+export default Home;
