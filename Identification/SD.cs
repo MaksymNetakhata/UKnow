@@ -34,14 +34,6 @@ namespace Identification
         {
             new Client
             {
-                ClientId = "service.client",
-                ClientSecrets = { new Secret("secret".Sha256()) },
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
-                AllowedScopes = { "api1", "api2.read_only" }
-            },
-
-            new Client
-            {
                 ClientId = "teacher",
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.Code,
