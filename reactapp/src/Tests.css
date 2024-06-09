@@ -1,0 +1,82 @@
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: rgba(249, 249, 249, 0.4);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.test-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.89);
+}
+
+.test-item h2 {
+    margin: 0 0 10px;
+}
+
+.options li {
+    margin: 5px 0;
+}
+
+.check-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.check-button:hover {
+    background-color: #218838;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.test-h2{
+    margin-bottom: 10px;
+}
+
+.close-button:hover {
+    color: red;
+}

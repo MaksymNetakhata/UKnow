@@ -22,13 +22,7 @@ const NavMenu = () => {
                 <ul>
                     <li><Link to="/" className="nav-button">Головна</Link></li>
                     <li><Link to="/Quiz" className="nav-button">Тести</Link></li>
-                    {isAuthorized &&(
-                        <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
-                    )}
-                    {!isAuthorized &&(
-                        <li><button onClick={handleLogin}>Увійти</button></li>
-                    )}
-                    
+                    <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
                 </ul>
             </nav>
         );

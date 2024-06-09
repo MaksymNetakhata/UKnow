@@ -43,8 +43,8 @@ namespace Identification
                     IdentityServerConstants.StandardScopes.Email
                     //JwtClaimTypes.Role
                 },
-                RedirectUris = {"https://localhost:7135/signin-oidc" },
-                PostLogoutRedirectUris={ "https://localhost:7135/signout-callback-oidc" },
+                RedirectUris = {"http://localhost:5208/signin-oidc" },
+                PostLogoutRedirectUris={ "http://localhost:5208/signout-callback-oidc" },
                 //RequirePkce = true,
                 //AllowAccessTokensViaBrowser = true
             }
