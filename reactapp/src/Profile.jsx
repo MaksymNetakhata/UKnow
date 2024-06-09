@@ -1,5 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Profile.css';
+import { fetchUser } from "./services/Profile.jsx";
+import NavMenu from "./NavMenu.jsx";
+import {Link} from "react-router-dom";
 
 export default function Profile() {
     const [email, setEmail] = useState('');
@@ -37,7 +40,7 @@ export default function Profile() {
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5208/login', { 
+        const response = await fetch('http://localhost:5208/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +58,7 @@ export default function Profile() {
 
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('https://localhost:5173/register', { 
+        const response = await fetch('http://localhost:5208/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
