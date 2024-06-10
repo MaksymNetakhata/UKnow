@@ -1,27 +1,27 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UKnow.Data;
 
 namespace webapi.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class TestController : ControllerBase
+    public class ProfilleController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public TestController(AppDbContext context)
+        public ProfilleController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<Test>>> GetTests()
+        public async Task<ActionResult<IEnumerable<Profile>>> GetInfo()
         {
-            var asr = HttpContext.Request;
-            return Ok(await _context.Test.ToListAsync());
+            return Ok(await _context.Profile.ToListAsync());
         }
     }
 }

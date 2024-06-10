@@ -34,25 +34,19 @@ namespace Identification
         {
             new Client
             {
-                ClientId = "service.client",
-                ClientSecrets = { new Secret("secret".Sha256()) },
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
-                AllowedScopes = { "api1", "api2.read_only" }
-            },
-
-            new Client
-            {
                 ClientId = "teacher",
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.Code,
                 AllowedScopes = { "teacher", 
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    IdentityServerConstants.StandardScopes.Email,
-                    JwtClaimTypes.Role
+                    IdentityServerConstants.StandardScopes.Email
+                    //JwtClaimTypes.Role
                 },
-                RedirectUris = {"https://localhost:7135/signin-oidc" },
-                PostLogoutRedirectUris={ "https://localhost:7135/signout-callback-oidc" }
+                RedirectUris = {"http://localhost:5208/signin-oidc" },
+                PostLogoutRedirectUris={ "http://localhost:5208/signout-callback-oidc" },
+                //RequirePkce = true,
+                //AllowAccessTokensViaBrowser = true
             }
         };
     }

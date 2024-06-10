@@ -2,6 +2,7 @@ using Duende.IdentityServer.Services;
 using Identification.Data;
 using Identification.IDbInitializerF;
 using Identification.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,7 @@ namespace Identification
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddRazorPages();
+<<<<<<< HEAD
             
             builder.Services.AddCors(options =>
             {
@@ -37,8 +39,21 @@ namespace Identification
                 });
             });
 
+=======
+>>>>>>> newAuthorization
 
-            builder.Services.AddIdentityServer(options => 
+           builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
+
+            builder.Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
@@ -48,7 +63,14 @@ namespace Identification
             }).AddInMemoryIdentityResources(SD.IdentityResources)
             .AddInMemoryApiScopes(SD.ApiScopes)
             .AddInMemoryClients(SD.Clients).AddAspNetIdentity<ApplicationUser>()
-            .AddDeveloperSigningCredential().AddProfileService<ProfileService>();
+            .AddDeveloperSigningCredential();//AddProfileService<ProfileService>();
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = "oidc";
+            }).AddCookie();
 
             builder.Services.AddScoped<IProfileService, ProfileService>();
 
@@ -66,7 +88,13 @@ namespace Identification
             app.UseStaticFiles();
 
             SeedDatabase();
+<<<<<<< HEAD
             
+=======
+
+            app.UseCors("AllowAllHeaders");
+
+>>>>>>> newAuthorization
             app.UseRouting();
             app.UseCors();
             app.UseIdentityServer();

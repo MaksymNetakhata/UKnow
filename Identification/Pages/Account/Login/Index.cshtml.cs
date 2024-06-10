@@ -132,7 +132,7 @@ public class Index : PageModel
                 };
 
                 await HttpContext.SignInAsync(isuser, props);
-                var accessToken = await HttpContext.GetTokenAsync("access_token");
+                //var accessToken = await HttpContext.GetTokenAsync("access_token");
 
                 if (context != null)
                 {

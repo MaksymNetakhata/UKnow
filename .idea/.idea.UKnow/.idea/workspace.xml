@@ -11,12 +11,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/reactapp/src/services/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Profile.jsx" afterDir="false" />
     </list>
+=======
+    <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="" />
+>>>>>>> newAuthorization
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -39,6 +43,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/reactapp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -62,7 +72,11 @@
     &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
+=======
+    &quot;git-widget-placeholder&quot;: &quot;newAuthorization&quot;,
+>>>>>>> newAuthorization
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -207,6 +221,7 @@
       <workItem from="1717320884778" duration="5733000" />
       <workItem from="1717338723904" duration="45000" />
       <workItem from="1717349028899" duration="12161000" />
+<<<<<<< HEAD
       <workItem from="1717371043970" duration="452000" />
       <workItem from="1717406594435" duration="3697000" />
       <workItem from="1717422753895" duration="1561000" />
@@ -217,6 +232,10 @@
       <workItem from="1717707231195" duration="61000" />
       <workItem from="1717708360733" duration="3154000" />
       <workItem from="1717755931117" duration="1707000" />
+=======
+      <workItem from="1717371043970" duration="301000" />
+      <workItem from="1717953383994" duration="6950000" />
+>>>>>>> newAuthorization
     </task>
     <task id="LOCAL-00001" summary="add ...">
       <option name="closed" value="true" />
@@ -298,6 +317,7 @@
       <option name="project" value="LOCAL" />
       <updated>1717370792703</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00011" summary="на всяк пожарный">
       <option name="closed" value="true" />
       <created>1717371481121</created>
@@ -313,6 +333,23 @@
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
       <updated>1717409317427</updated>
+=======
+    <task id="LOCAL-00011" summary="login_gut">
+      <option name="closed" value="true" />
+      <created>1718008259922</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718008259922</updated>
+    </task>
+    <task id="LOCAL-00012" summary="auth_gut">
+      <option name="closed" value="true" />
+      <created>1718009027927</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718009027927</updated>
+>>>>>>> newAuthorization
     </task>
     <option name="localTasksCounter" value="13" />
     <servers />
@@ -344,8 +381,14 @@
     <MESSAGE value="добавіла" />
     <MESSAGE value="tests" />
     <MESSAGE value="тестыыы" />
+<<<<<<< HEAD
     <MESSAGE value="на всяк пожарный" />
     <MESSAGE value="new features tests" />
     <option name="LAST_COMMIT_MESSAGE" value="new features tests" />
+=======
+    <MESSAGE value="login_gut" />
+    <MESSAGE value="auth_gut" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth_gut" />
+>>>>>>> newAuthorization
   </component>
 </project>

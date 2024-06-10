@@ -1,8 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './Profile.css';
+<<<<<<< HEAD
 import { fetchUser } from "./services/Profile.jsx";
 import NavMenu from "./NavMenu.jsx";
 import {Link} from "react-router-dom";
+=======
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+>>>>>>> newAuthorization
 
 export default function Profile() {
     const [email, setEmail] = useState('');
@@ -13,7 +18,13 @@ export default function Profile() {
     const signupButtonRef = useRef(null);
     const loginButtonRef = useRef(null);
     const userFormsRef = useRef(null);
-
+    const navigate = useNavigate();
+    
+    const getIn = {
+        "name":fullName,
+        "login":email,
+        "password":password,
+    };
     useEffect(() => {
         const signupButton = signupButtonRef.current;
         const loginButton = loginButtonRef.current;
@@ -40,6 +51,7 @@ export default function Profile() {
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         const response = await fetch('http://localhost:5208/login', {
             method: 'POST',
             headers: {
@@ -52,12 +64,28 @@ export default function Profile() {
             const data = await response.json();
             setMessage(data.message);
         } else {
+=======
+        try {
+            const response = await axios.post('http://localhost:5208/auth', {
+                email: email,
+                password: password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            console.log('Login successful');
+            navigate('/');
+        } catch (error) {
+            console.error('Login failed:', error);
+>>>>>>> newAuthorization
             setMessage('Unauthorized');
         }
     };
 
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         const response = await fetch('http://localhost:5208/register', {
             method: 'POST',
             headers: {
@@ -71,7 +99,26 @@ export default function Profile() {
             setMessage(data.message);
         } else {
             setMessage('Error occurred during signup');
+=======
+        try {
+            const response = await axios.post('http://localhost:5208/auth/register', {
+                Name: fullName,
+                email: email,
+                password: password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            console.log('Registration successful');
+            setMessage('Registration successful');
+            navigate('/');
+        } catch (error) {
+            console.error('Login failed:', error);
+            throw error;
+>>>>>>> newAuthorization
         }
+
     };
 
     return (
@@ -81,7 +128,7 @@ export default function Profile() {
                     <div className="user_options-unregistered">
                         <h2 className="user_unregistered-title">Немає облікового запису?</h2>
                         <p className="user_unregistered-text">Зареєструйтесь щоб дізнатись свій рівень іноземної мови</p>
-                        <button className="user_unregistered-signup" id="signup-button" ref={signupButtonRef}>
+                        <button className="user_unregistered-signup" id="signup-button" ref={signupButtonRef} >
                             Зареєструватись
                         </button>
                     </div>
