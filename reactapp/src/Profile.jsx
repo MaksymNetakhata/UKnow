@@ -52,7 +52,8 @@ export default function Profile() {
             }, {
                 headers: {
                     'Content-Type': 'application/json',
-                }
+                },
+                withCredentials: true
             });
             console.log('Login successful');
             navigate('/');
