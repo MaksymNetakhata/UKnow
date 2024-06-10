@@ -44,6 +44,22 @@ const NavMenu = () => {
     };
 
 
+import { useState } from "react";
+import { login } from "./services/Login";
+
+
+
+const NavMenu = () => {
+
+    const [isAuthorized, setAuthorized] = useState(false);
+
+    const handleLogin = async() => {
+        const response = await login();
+        window.location.href = response;
+        setAuthorized(true);
+    };
+
+
         return (
             <nav className="nav-menu">
                 <h4><Link to="/" className="navbar-brand">uKnow</Link></h4>
@@ -54,6 +70,10 @@ const NavMenu = () => {
                 </ul>
             </nav>
         );
+        
+        
+}
+/*} <div>
         
         
 }

@@ -30,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX File" />
+        <option value="JSX File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -68,6 +69,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Identification: https.executor&quot;: &quot;Run&quot;,
     &quot;.NET Launch Settings Profile.Identification: https.executor&quot;: &quot;Run&quot;,
     &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,

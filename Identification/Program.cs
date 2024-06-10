@@ -26,21 +26,6 @@ namespace Identification
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddRazorPages();
-<<<<<<< HEAD
-            
-            builder.Services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(policy =>
-                {
-                    policy.WithOrigins("https://localhost:5173")
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials();
-                });
-            });
-
-=======
->>>>>>> newAuthorization
 
            builder.Services.AddCors(options =>
             {
@@ -88,13 +73,9 @@ namespace Identification
             app.UseStaticFiles();
 
             SeedDatabase();
-<<<<<<< HEAD
-            
-=======
 
             app.UseCors("AllowAllHeaders");
 
->>>>>>> newAuthorization
             app.UseRouting();
             app.UseCors();
             app.UseIdentityServer();

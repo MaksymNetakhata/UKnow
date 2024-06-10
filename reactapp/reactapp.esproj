@@ -12,9 +12,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\components\" />
-<<<<<<< HEAD
-=======
     <Folder Include="src\api\" />
->>>>>>> newAuthorization
   </ItemGroup>
 </Project>

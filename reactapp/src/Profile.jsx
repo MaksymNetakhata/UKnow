@@ -1,13 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './Profile.css';
-<<<<<<< HEAD
-import { fetchUser } from "./services/Profile.jsx";
-import NavMenu from "./NavMenu.jsx";
-import {Link} from "react-router-dom";
-=======
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
->>>>>>> newAuthorization
 
 export default function Profile() {
     const [email, setEmail] = useState('');
@@ -51,20 +45,6 @@ export default function Profile() {
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-<<<<<<< HEAD
-        const response = await fetch('http://localhost:5208/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            setMessage(data.message);
-        } else {
-=======
         try {
             const response = await axios.post('http://localhost:5208/auth', {
                 email: email,
@@ -78,28 +58,12 @@ export default function Profile() {
             navigate('/');
         } catch (error) {
             console.error('Login failed:', error);
->>>>>>> newAuthorization
             setMessage('Unauthorized');
         }
     };
 
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
-<<<<<<< HEAD
-        const response = await fetch('http://localhost:5208/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ fullName, email, password }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            setMessage(data.message);
-        } else {
-            setMessage('Error occurred during signup');
-=======
         try {
             const response = await axios.post('http://localhost:5208/auth/register', {
                 Name: fullName,
@@ -116,7 +80,6 @@ export default function Profile() {
         } catch (error) {
             console.error('Login failed:', error);
             throw error;
->>>>>>> newAuthorization
         }
 
     };
