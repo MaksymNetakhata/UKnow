@@ -12,18 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae5f4d3-5fec-4125-ae1d-ddd987e199b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/reactapp/src/Tests.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Identification/SD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Identification/SD.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Identification/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Identification/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/NavMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactapp/src/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/Tests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/services/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/services/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactapp/src/services/fetchTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactapp/src/services/fetchTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,35 +57,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Identification: https.executor": "Run",
-    ".NET Launch Settings Profile.webapi: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "newAuthorization",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.reactapp: run.executor": "Run",
-    "ts.external.directory.path": "/Applications/Rider.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Identification: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.webapi: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;newAuthorization&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.reactapp: run.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/Rider.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/valeriya/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/valeriya/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/valeriya/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.7132018" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.webapi: http">
+  <component name="RunManager" selected="npm.reactapp: run">
     <configuration name="Identification: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Identification/Identification.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />

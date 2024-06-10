@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Profile.css';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 export default function Profile() {
@@ -11,6 +12,7 @@ export default function Profile() {
     const signupButtonRef = useRef(null);
     const loginButtonRef = useRef(null);
     const userFormsRef = useRef(null);
+    const navigate = useNavigate();
     
     const getIn = {
         "name":fullName,
@@ -43,18 +45,19 @@ export default function Profile() {
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5208/auth', { 
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            setMessage(data.message);
-        } else {
+        try {
+            const response = await axios.post('http://localhost:5208/auth', {
+                email: email,
+                password: password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            console.log('Login successful');
+            navigate('/');
+        } catch (error) {
+            console.error('Login failed:', error);
             setMessage('Unauthorized');
         }
     };
@@ -62,7 +65,11 @@ export default function Profile() {
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5208/auth/register', getIn, {
+            const response = await axios.post('http://localhost:5208/auth/register', {
+                fullName: fullName,
+                email: email,
+                password: password
+            }, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
