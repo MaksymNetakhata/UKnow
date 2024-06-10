@@ -82,7 +82,7 @@
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.7132018" />
   </component>
-  <component name="RunManager" selected="npm.reactapp: run">
+  <component name="RunManager" selected=".NET Launch Settings Profile.webapi: http">
     <configuration name="Identification: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Identification/Identification.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
