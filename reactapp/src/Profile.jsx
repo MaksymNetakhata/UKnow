@@ -66,7 +66,7 @@ export default function Profile() {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5208/auth/register', {
-                fullName: fullName,
+                Name: fullName,
                 email: email,
                 password: password
             }, {
@@ -76,6 +76,7 @@ export default function Profile() {
             });
             console.log('Registration successful');
             setMessage('Registration successful');
+            navigate('/');
         } catch (error) {
             console.error('Login failed:', error);
             throw error;
