@@ -74,9 +74,9 @@ const Test = () => {
                                             <label>
                                                 <input
                                                     type="radio"
-                                                    name={question - ${test.id}}
-                                                value={option}
-                                                onChange={() => handleAnswerChange(test.id, option)}
+                                                    name={`question-${test.id}`}
+                                                    value={option}
+                                                    onChange={() => handleAnswerChange(test.id, option)}
                                                 />
                                                 {option}
                                             </label>
