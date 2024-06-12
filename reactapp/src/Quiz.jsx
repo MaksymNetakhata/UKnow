@@ -23,7 +23,7 @@ const Quiz = () => {
     }, []);
 
     const handleTestClick = (id) => {
-        navigate(/test/${ id }, { state: { tests } });
+        navigate(`/test/${id}`, { state: { tests } });
     };
 
 

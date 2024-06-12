@@ -5,7 +5,7 @@ const headers = {
 };
 export const fetchTest = async () => {
     try {
-        const response = await axios.get("http://localhost:5208/test", {
+        const response = await axios.get("https://localhost:7135/test", {
             headers: headers,
             withCredentials: true
         });

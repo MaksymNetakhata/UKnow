@@ -46,7 +46,7 @@ export default function Profile() {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5208/auth', {
+            const response = await axios.post('https://localhost:7135/auth', {
                 email: email,
                 password: password
             }, {
@@ -66,7 +66,7 @@ export default function Profile() {
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5208/auth/register', {
+            const response = await axios.post('https://localhost:7135/auth/register', {
                 Name: fullName,
                 email: email,
                 password: password

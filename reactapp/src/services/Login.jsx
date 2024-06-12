@@ -3,7 +3,7 @@ import axios from 'axios';
 export const login = async () => {
     try {
         const response = await axios.post(
-            'http://localhost:5208/auth',
+            'https://localhost:7135/auth',
         );
         console.log(response);
         
