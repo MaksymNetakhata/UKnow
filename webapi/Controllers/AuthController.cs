@@ -27,6 +27,7 @@ namespace webapi.Controllers
         }
 
         [HttpPost("register")]
+        [EnableCors("AllowAllHeaders")]
         public async Task<IResult> Register([FromBody] RegisterModel model)
         {
             await _usersService.Register(model.Name, model.Email, model.Password);
@@ -47,7 +48,7 @@ namespace webapi.Controllers
             return Results.Ok(token);
 
 
-            
+
         }
 
         //public async Task<IActionResult> Logout()
