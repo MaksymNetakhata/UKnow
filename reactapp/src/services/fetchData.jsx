@@ -5,7 +5,7 @@ const headers = {
 };
 export const fetchData = async () => {
     try {
-        var response = await axios.get("/api/Profile", { headers, withCredentials: true });
+        var response = await axios.get("https://localhost:7135/api/Profille", { headers, withCredentials: true });
         console.log(response);
         return response.data;
     } catch (e) {

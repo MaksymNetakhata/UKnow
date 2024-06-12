@@ -5,31 +5,39 @@ import axios from "axios";
 
 function UserProfile() {
     const [profileInfo, setProfileInfo] = useState(null);
-    const headers = {
-        "Content-Type": "application/json",
-    };
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("/api/Profile", { headers, withCredentials: true });
-                setProfileInfo(response.data); 
-            } catch (e) {
-                console.error(e);
-            }
+        const getProfileData = async () => {
+            const data = await fetchData();
+            setProfileInfo(data);
+            setIsLoading(false);
         };
 
-        fetchData();
+        getProfileData();
     }, []);
+
+    if (isLoading) {
+        return <p>Загрузка...</p>;
+    }
+
+    if (!profileInfo || (Array.isArray(profileInfo) && profileInfo.length === 0)) {
+        return (
+            <div>
+                <NavMenu />
+                <p className="text">Немає даних користувача.</p>
+            </div>
+        );
+    }
 
     return (
         <div>
             <NavMenu/>
             {profileInfo && (
                 <div>
-                    <h2>Профиль пользователя</h2>
-                    <p>Имя: {profileInfo.name}</p>
-                    <p>Email: {profileInfo.email}</p>
+                    <h2 className="text">Ваш профіль</h2>
+                    <p>Ім'я: {profileInfo.name}</p>
+                    <p></p>
                 </div>
             )}
         </div>

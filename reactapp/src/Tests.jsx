@@ -1,27 +1,28 @@
-import { useEffect, useState } from 'react';
-import { fetchTest } from "./services/fetchTest";
+import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './Tests.css';
+import { useLocation, useParams } from 'react-router-dom';
 
 const Test = () => {
-    const [testData, setTestData] = useState(null);
+    const location = useLocation();
+    const { tests } = location.state;
+    const { id } = useParams();
+
     const [error, setError] = useState(null);
+    const [testData, setTestData] = useState(null);
     const [answers, setAnswers] = useState({});
     const [score, setScore] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await fetchTest();
-                console.log('Fetched data:', data);
-                setTestData(data);
-            } catch (err) {
-                setError('Failed to fetch test data.');
-            }
-        };
-        fetchData();
+        const initialTests = tests.slice((id - 1)*10, id * 10);
+        const shuffledTests = initialTests.map(test => ({
+            ...test,
+            options: shuffleArray([test.option1, test.option2, test.option3, test.correctAnswer])
+        }));
+        setTestData(shuffledTests);
     }, []);
+
 
     const handleAnswerChange = (questionId, answer) => {
         setAnswers(prevAnswers => ({
@@ -48,6 +49,15 @@ const Test = () => {
         setIsModalOpen(false);
     };
 
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -59,39 +69,19 @@ const Test = () => {
                             <li key={test.id} className="test-item">
                                 <h2>{test.question}</h2>
                                 <ul className="options">
-                                    <li>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name={`question-${test.id}`}
-                                                value={test.option1}
-                                                onChange={() => handleAnswerChange(test.id, test.option1)}
-                                            />
-                                            {test.option1}
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name={`question-${test.id}`}
-                                                value={test.option2}
-                                                onChange={() => handleAnswerChange(test.id, test.option2)}
-                                            />
-                                            {test.option2}
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name={`question-${test.id}`}
-                                                value={test.option3}
-                                                onChange={() => handleAnswerChange(test.id, test.option3)}
-                                            />
-                                            {test.option3}
-                                        </label>
-                                    </li>
+                                    {test.options.map((option, index) => (
+                                        <li key={index}>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name={`question-${test.id}`}
+                                                    value={option}
+                                                    onChange={() => handleAnswerChange(test.id, option)}
+                                                />
+                                                {option}
+                                            </label>
+                                        </li>
+                                    ))}
                                 </ul>
                             </li>
                         ))}
