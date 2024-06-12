@@ -8,17 +8,21 @@ export default function Profile() {
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState('');
     const [message, setMessage] = useState('');
-
+    const [isAuthorized, setAuthorized] = useState(false);
+    
     const signupButtonRef = useRef(null);
     const loginButtonRef = useRef(null);
     const userFormsRef = useRef(null);
-    const navigate = useNavigate();
     
-    const getIn = {
-        "name":fullName,
-        "login":email,
-        "password":password,
-    };
+    const navigate = useNavigate();
+    useEffect(() => {
+        const storedAuth = localStorage.getItem('isAuthorized');
+        if (storedAuth) {
+            setAuthorized(JSON.parse(storedAuth));
+        }
+    }, []);
+
+
     useEffect(() => {
         const signupButton = signupButtonRef.current;
         const loginButton = loginButtonRef.current;
@@ -42,11 +46,12 @@ export default function Profile() {
             loginButton.removeEventListener('click', handleLoginClick);
         };
     }, []);
-
+    
+   
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5208/auth', {
+            const response = await axios.post('https://localhost:7135/auth', {
                 email: email,
                 password: password
             }, {
@@ -56,17 +61,19 @@ export default function Profile() {
                 withCredentials: true
             });
             console.log('Login successful');
-            navigate('/');
+            setAuthorized(true);
+            localStorage.setItem('isAuthorized', true);
+            navigate('/User');
         } catch (error) {
             console.error('Login failed:', error);
             setMessage('Unauthorized');
         }
     };
-
+   
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5208/auth/register', {
+            const response = await axios.post('https://localhost:7135/auth/register', {
                 Name: fullName,
                 email: email,
                 password: password
@@ -77,12 +84,13 @@ export default function Profile() {
             });
             console.log('Registration successful');
             setMessage('Registration successful');
-            navigate('/');
+            setAuthorized(true);
+            localStorage.setItem('isAuthorized', true);
+            navigate('/User');
         } catch (error) {
             console.error('Login failed:', error);
             throw error;
         }
-
     };
 
     return (
