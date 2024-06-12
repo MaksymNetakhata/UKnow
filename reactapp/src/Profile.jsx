@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Profile.css';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
@@ -13,12 +13,7 @@ export default function Profile() {
     const loginButtonRef = useRef(null);
     const userFormsRef = useRef(null);
     const navigate = useNavigate();
-    
-    const getIn = {
-        "name":fullName,
-        "login":email,
-        "password":password,
-    };
+
     useEffect(() => {
         const signupButton = signupButtonRef.current;
         const loginButton = loginButtonRef.current;
@@ -73,14 +68,26 @@ export default function Profile() {
             }, {
                 headers: {
                     'Content-Type': 'application/json',
-                }
+                },
+                withCredentials: true
             });
             console.log('Registration successful');
             setMessage('Registration successful');
             navigate('/');
         } catch (error) {
-            console.error('Login failed:', error);
-            throw error;
+            if (error.response) {
+                // Статус ответа выходит за пределы 2xx
+            } else if (error.request) {
+                // Отсутствует тело ответа
+                console.error(error.request)
+            } else {
+                // Ошибка, связанная с неправильной настройкой запроса
+                console.error(error.message)
+            }
+            // Другая ошибка
+            console.error(error.config)
+            // Подробная информация об ошибке
+            console.error(error.toJSON())
         }
 
     };
