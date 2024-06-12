@@ -5,6 +5,7 @@ import Home from './App';
 import Quiz from './Quiz';
 import Profile from './Profile';
 import Tests from "./Tests.jsx";
+import User from "./UserProfil.jsx";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: '/test/:id',
         element: <Tests />,
+    },
+    {
+        path: '/User',
+        element: <User />,
     },
 ]);
 

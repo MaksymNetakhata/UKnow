@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Profile.css';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
@@ -8,11 +8,20 @@ export default function Profile() {
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState('');
     const [message, setMessage] = useState('');
-
+    const [isAuthorized, setAuthorized] = useState(false);
+    
     const signupButtonRef = useRef(null);
     const loginButtonRef = useRef(null);
     const userFormsRef = useRef(null);
+    
     const navigate = useNavigate();
+    useEffect(() => {
+        const storedAuth = localStorage.getItem('isAuthorized');
+        if (storedAuth) {
+            setAuthorized(JSON.parse(storedAuth));
+        }
+    }, []);
+
 
     useEffect(() => {
         const signupButton = signupButtonRef.current;
@@ -37,7 +46,8 @@ export default function Profile() {
             loginButton.removeEventListener('click', handleLoginClick);
         };
     }, []);
-
+    
+   
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -51,13 +61,15 @@ export default function Profile() {
                 withCredentials: true
             });
             console.log('Login successful');
-            navigate('/');
+            setAuthorized(true);
+            localStorage.setItem('isAuthorized', true);
+            navigate('/User');
         } catch (error) {
             console.error('Login failed:', error);
             setMessage('Unauthorized');
         }
     };
-
+   
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -68,28 +80,17 @@ export default function Profile() {
             }, {
                 headers: {
                     'Content-Type': 'application/json',
-                },
-                withCredentials: true
+                }
             });
             console.log('Registration successful');
             setMessage('Registration successful');
-            navigate('/');
+            setAuthorized(true);
+            localStorage.setItem('isAuthorized', true);
+            navigate('/User');
         } catch (error) {
-            if (error.response) {
-                // Статус ответа выходит за пределы 2xx
-            } else if (error.request) {
-                // Отсутствует тело ответа
-                console.error(error.request)
-            } else {
-                // Ошибка, связанная с неправильной настройкой запроса
-                console.error(error.message)
-            }
-            // Другая ошибка
-            console.error(error.config)
-            // Подробная информация об ошибке
-            console.error(error.toJSON())
+            console.error('Login failed:', error);
+            throw error;
         }
-
     };
 
     return (

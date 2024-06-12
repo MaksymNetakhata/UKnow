@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import './NavMenu.css';
 import { login } from "./services/Login.jsx";
@@ -6,11 +6,12 @@ import { login } from "./services/Login.jsx";
 const NavMenu = () => {
     const [isAuthorized, setAuthorized] = useState(false);
 
-    const handleLogin = async () => {
-        const response = await login();
-        window.location.href = response;
-        setAuthorized(true);
-    };
+    useEffect(() => {
+        const storedAuth = localStorage.getItem('isAuthorized');
+        if (storedAuth) {
+            setAuthorized(JSON.parse(storedAuth));
+        }
+    }, []);
 
     return (
         <nav className="nav-menu">
@@ -18,7 +19,11 @@ const NavMenu = () => {
             <ul>
                 <li><Link to="/" className="nav-button">Головна</Link></li>
                 <li><Link to="/Quiz" className="nav-button">Тести</Link></li>
-                <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
+                {isAuthorized ? (
+                    <li><Link to="/User" className="nav-button">Профіль</Link></li>
+                ) : (
+                    <li><Link to="/Profile" className="nav-button">Профіль</Link></li>
+                )}
             </ul>
         </nav>
     );
