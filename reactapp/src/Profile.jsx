@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import './Profile.css';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
@@ -62,7 +62,8 @@ export default function Profile() {
             });
             console.log('Login successful');
             setAuthorized(true);
-            localStorage.setItem('isAuthorized', true);
+            localStorage.setItem('token', response.data);
+            //localStorage.setItem('isAuthorized', true);
             navigate('/User');
         } catch (error) {
             console.error('Login failed:', error);

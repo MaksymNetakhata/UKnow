@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './Tests.css';
 import { useLocation, useParams } from 'react-router-dom';
+import { saveResultsToDatabase } from './services/SaveResults';
 
 const Test = () => {
     const location = useLocation();
@@ -31,7 +32,7 @@ const Test = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let correctAnswersCount = 0;
         testData.forEach(test => {
@@ -43,6 +44,7 @@ const Test = () => {
         });
         setScore(correctAnswersCount);
         setIsModalOpen(true);
+        await saveResultsToDatabase(correctAnswersCount, id);
     };
 
     const closeModal = () => {

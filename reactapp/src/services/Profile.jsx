@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5208/';
 
 export const fetchUser = async () => {
     try {
