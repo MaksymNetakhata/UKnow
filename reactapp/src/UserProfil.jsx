@@ -20,24 +20,28 @@ function UserProfile() {
     if (isLoading) {
         return <p>Загрузка...</p>;
     }
-
+    const handleRemoveItem = () => {
+        localStorage.removeItem('isAuthorized');
+    };
     if (!profileInfo || (Array.isArray(profileInfo) && profileInfo.length === 0)) {
         return (
             <div>
-                <NavMenu />
+                <NavMenu/>
                 <p className="text">Немає даних користувача.</p>
+                
             </div>
         );
     }
-
+   
     return (
         <div>
             <NavMenu/>
             {profileInfo && (
                 <div>
                     <h2 className="text">Ваш профіль</h2>
-                    <p>Ім'я: {profileInfo.name}</p>
+                   
                     <p></p>
+                    
                 </div>
             )}
         </div>

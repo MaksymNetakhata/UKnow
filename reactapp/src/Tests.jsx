@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './Tests.css';
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 const Test = () => {
     const location = useLocation();
@@ -15,14 +15,21 @@ const Test = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        const initialTests = tests.slice((id - 1)*10, id * 10);
-        const shuffledTests = initialTests.map(test => ({
-            ...test,
-            options: shuffleArray([test.option1, test.option2, test.option3, test.correctAnswer])
-        }));
-        setTestData(shuffledTests);
-    }, []);
+        const fetchData = async () => {
+            try {
+                const initialTests = tests.slice((id - 1) * 10, id * 10);
+                const shuffledTests = initialTests.map(test => ({
+                    ...test,
+                    options: shuffleArray([test.option1, test.option2, test.option3, test.correctAnswer])
+                }));
+                setTestData(shuffledTests);
+            } catch (error) {
+                setError('Failed to load test data.');
+            }
+        };
 
+        fetchData();
+    }, [id, tests]);
 
     const handleAnswerChange = (questionId, answer) => {
         setAnswers(prevAnswers => ({
@@ -57,13 +64,18 @@ const Test = () => {
         return array;
     }
 
-
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <h1>Test List</h1>
-                {error && <p>{error}</p>}
-                {testData ? (
+        <div>
+            {error ? (
+                <div className="centered-container">
+                    <h1 className="auth-title">Для того щоб перейти до тестів вам потрібно зареєструватись</h1>
+                    <button className="cont-auth">
+                        <Link to="/Profile">Зареєструватись</Link>
+                    </button>
+                </div>
+            ) : testData ? (
+                <form onSubmit={handleSubmit}>
+                    <h1>Test List</h1>
                     <ul>
                         {testData.map((test) => (
                             <li key={test.id} className="test-item">
@@ -77,6 +89,7 @@ const Test = () => {
                                                     name={`question-${test.id}`}
                                                     value={option}
                                                     onChange={() => handleAnswerChange(test.id, option)}
+                                                    required 
                                                 />
                                                 {option}
                                             </label>
@@ -86,11 +99,11 @@ const Test = () => {
                             </li>
                         ))}
                     </ul>
-                ) : (
-                    <p>Loading...</p>
-                )}
-            </div>
-            <button type="submit" className="check-button">Перевірити</button>
+                    <button type="submit" className="check-button">Перевірити</button>
+                </form>
+            ) : (
+                <p>Loading...</p>
+            )}
 
             <Modal
                 isOpen={isModalOpen}
@@ -100,12 +113,13 @@ const Test = () => {
                 overlayClassName="modal-overlay"
             >
                 <button onClick={closeModal} className="close-button">X</button>
-                <h2 className="test-h2">Tестування</h2>
+                <h2 className="test-h2">Тестування</h2>
                 {score !== null && (
-                    <p>Ваш результат: {score} з {testData.length}</p>
+                    <p>Результат: {score} з {testData.length}</p>
                 )}
+               
             </Modal>
-        </form>
+        </div>
     );
 };
 

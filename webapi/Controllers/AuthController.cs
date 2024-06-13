@@ -40,7 +40,17 @@ namespace webapi.Controllers
         {
             var token = await _usersService.Login(model.Email, model.Password);
 
-            HttpContext.Response.Cookies.Append("cookies", token);
+            HttpContext.Response.Cookies.Append(
+                "cookies",  
+                token,      
+                new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTime.UtcNow.AddHours(1)
+                }
+            );
 
 
 

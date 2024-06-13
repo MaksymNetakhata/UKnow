@@ -80,3 +80,39 @@ ul {
 .close-button:hover {
     color: red;
 }
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.auth-title {
+    margin-bottom: 20px; 
+    text-align: center;
+    font-size: 35px;
+    color: #3c1e00;
+}
+
+.cont-auth {
+    border-radius: 25px;
+    padding: 10px 20px; 
+    background-color: rgb(229, 112, 0); 
+    text-align: center;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease; 
+}
+
+.cont-auth a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block; 
+    padding: 10px 20px; 
+}
+
+.cont-auth:hover {
+    background-color: rgb(173, 61, 0); 
+    cursor: pointer; 
+}

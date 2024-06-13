@@ -22,7 +22,7 @@ export default function Profile() {
         }
     }, []);
 
-
+   
     useEffect(() => {
         const signupButton = signupButtonRef.current;
         const loginButton = loginButtonRef.current;
