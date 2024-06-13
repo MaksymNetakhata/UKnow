@@ -29,12 +29,12 @@ const Quiz = () => {
 
     return (
         <div>
-            <NavMenu/>
+            <NavMenu />
             <div className="text">
                 <h1 className="quiz-title">Оберіть тест:</h1>
-                <ul className="test-list">
+                <ul>
                     {[...Array(10).keys()].map(index => (
-                        <li key={index} onClick={() => handleTestClick(index+1)}>
+                        <li key={index} onClick={() => handleTestClick(index + 1)}>
                             Тест #{index + 1}
                         </li>
                     ))}

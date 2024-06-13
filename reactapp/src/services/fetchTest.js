@@ -7,7 +7,10 @@ export const fetchTest = async () => {
 
 
     try {
-        var response = await axios.get("https://localhost:7135/test", { headers, withCredentials: true });
+        const response = await axios.get("https://localhost:7135/test", {
+            headers: headers,
+            withCredentials: true
+        });
         console.log(response);
         return response.data;
     } catch (e) {

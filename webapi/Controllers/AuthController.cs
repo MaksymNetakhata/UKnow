@@ -27,6 +27,7 @@ namespace webapi.Controllers
         }
 
         [HttpPost("register")]
+        [EnableCors("AllowAllHeaders")]
         public async Task<IResult> Register([FromBody] RegisterModel model)
         {
             await _usersService.Register(model.Name, model.Email, model.Password);
@@ -40,24 +41,20 @@ namespace webapi.Controllers
         {
             var token = await _usersService.Login(model.Email, model.Password);
 
-            HttpContext.Response.Cookies.Append(
-                "cookies",  
-                token,      
-                new CookieOptions
-                {
-                    HttpOnly = true,
-                    Secure = true,
-                    SameSite = SameSiteMode.Strict,
-                    Expires = DateTime.UtcNow.AddHours(1)
-                }
-            );
+            HttpContext.Response.Cookies.Append("cookies", token, new CookieOptions
+            {
+                HttpOnly = false, // Доступно только через HTTP, не доступно через JavaScript
+                Secure = true,   // Использовать только через HTTPS
+                SameSite = SameSiteMode.Strict, // Политика SameSite
+                Expires = DateTime.UtcNow.AddHours(1) // Срок действия куки
+            });
 
 
 
             return Results.Ok(token);
 
 
-            
+
         }
 
         //public async Task<IActionResult> Logout()
