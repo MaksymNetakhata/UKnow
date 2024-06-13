@@ -32,18 +32,49 @@ function UserProfile() {
             </div>
         );
     }
-   
+
     return (
         <div>
             <NavMenu/>
-            {profileInfo && (
-                <div>
-                    <h2 className="text">Ваш профіль</h2>
-                   
-                    <p></p>
-                    
-                </div>
-            )}
+            <div>
+                <h2 className="text">Ваш профіль</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Ім'я користувача</th>
+                        <th>ScoreIn1</th>
+                        <th>ScoreIn2</th>
+                        <th>ScoreIn3</th>
+                        <th>ScoreIn4</th>
+                        <th>ScoreIn5</th>
+                        <th>ScoreIn6</th>
+                        <th>ScoreIn7</th>
+                        <th>ScoreIn8</th>
+                        <th>ScoreIn9</th>
+                        <th>ScoreIn10</th>
+                        <th>Average</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {profileInfo.map(profile => (
+                        <tr key={profile.id}>
+                            <td>{profile.user ? profile.user.name : 'N/A'}</td>
+                            <td>{profile.scoreIn1}</td>
+                            <td>{profile.scoreIn2}</td>
+                            <td>{profile.scoreIn3}</td>
+                            <td>{profile.scoreIn4}</td>
+                            <td>{profile.scoreIn5}</td>
+                            <td>{profile.scoreIn6}</td>
+                            <td>{profile.scoreIn7}</td>
+                            <td>{profile.scoreIn8}</td>
+                            <td>{profile.scoreIn9}</td>
+                            <td>{profile.scoreIn10}</td>
+                            <td>{profile.average}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
