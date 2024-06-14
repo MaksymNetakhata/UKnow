@@ -3,17 +3,23 @@ import NavMenu from "@/NavMenu.jsx";
 import './UserProfil.css';
 import { fetchData } from "./services/fetchData.jsx";
 import axios from "axios";
+import { getUserIdFromToken } from './services/SaveResults';
 
 function UserProfile() {
     const [profileInfo, setProfileInfo] = useState(null);
-    const headers = {
-        "Content-Type": "application/json",
-    };
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://localhost:7135/api/Profille", { headers, withCredentials: true });
+                const token = localStorage.getItem('token');
+                const id = getUserIdFromToken(token);
+                const response = await axios.get(`https://localhost:7135/api/Profille/${id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    withCredentials: true
+                });
                 setProfileInfo(response.data); 
             } catch (e) {
                 console.error(e);
@@ -55,21 +61,19 @@ function UserProfile() {
                     </tr>
                     </thead>
                     <tbody>
-                    {profileInfo.map(profile => (
-                        <tr key={profile.user}>
-                            <td>{profile.scoreIn1}</td>
-                            <td>{profile.scoreIn2}</td>
-                            <td>{profile.scoreIn3}</td>
-                            <td>{profile.scoreIn4}</td>
-                            <td>{profile.scoreIn5}</td>
-                            <td>{profile.scoreIn6}</td>
-                            <td>{profile.scoreIn7}</td>
-                            <td>{profile.scoreIn8}</td>
-                            <td>{profile.scoreIn9}</td>
-                            <td>{profile.scoreIn10}</td>
-                            <td>{profile.average}</td>
+                        <tr key={profileInfo.user}>
+                            <td>{profileInfo.scoreIn1}</td>
+                            <td>{profileInfo.scoreIn2}</td>
+                            <td>{profileInfo.scoreIn3}</td>
+                            <td>{profileInfo.scoreIn4}</td>
+                            <td>{profileInfo.scoreIn5}</td>
+                            <td>{profileInfo.scoreIn6}</td>
+                            <td>{profileInfo.scoreIn7}</td>
+                            <td>{profileInfo.scoreIn8}</td>
+                            <td>{profileInfo.scoreIn9}</td>
+                            <td>{profileInfo.scoreIn10}</td>
+                            <td>{profileInfo.average}</td>
                         </tr>
-                    ))}
                     </tbody>
                 </table>
             </div>
