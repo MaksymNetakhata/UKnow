@@ -64,3 +64,26 @@ ul {
     background-color: #e0e0e0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.test-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.test-list li {
+    cursor: pointer;
+    width: 65px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.test-list li:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -62,7 +62,7 @@ export default function Profile() {
             console.log('Login successful');
             setAuthorized(true);
             localStorage.setItem('token', response.data);
-            //localStorage.setItem('isAuthorized', true);
+            localStorage.setItem('isAuthorized', true);
             navigate('/User');
         } catch (error) {
             console.error('Login failed:', error);

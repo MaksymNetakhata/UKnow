@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './Tests.css';
-import { useLocation, useParams } from 'react-router-dom';
+import {Link, useLocation, useParams} from 'react-router-dom';
 import { saveResultsToDatabase } from './services/SaveResults';
 
 const Test = () => {
@@ -16,13 +16,21 @@ const Test = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        const initialTests = tests.slice((id - 1) * 10, id * 10);
-        const shuffledTests = initialTests.map(test => ({
-            ...test,
-            options: shuffleArray([test.option1, test.option2, test.option3, test.correctAnswer])
-        }));
-        setTestData(shuffledTests);
-    }, []);
+        const fetchData = async () => {
+            try {
+                const initialTests = tests.slice((id - 1) * 10, id * 10);
+                const shuffledTests = initialTests.map(test => ({
+                    ...test,
+                    options: shuffleArray([test.option1, test.option2, test.option3, test.correctAnswer])
+                }));
+                setTestData(shuffledTests);
+            } catch (error) {
+                setError('Failed to load test data.');
+            }
+        };
+
+        fetchData();
+    }, [id, tests]);
 
 
     const handleAnswerChange = (questionId, answer) => {
@@ -84,6 +92,7 @@ const Test = () => {
                                                     name={`question-${test.id}`}
                                                     value={option}
                                                     onChange={() => handleAnswerChange(test.id, option)}
+                                                    required
                                                 />
                                                 {option}
                                             </label>
@@ -111,7 +120,7 @@ const Test = () => {
                 {score !== null && (
                     <p>Результат: {score} з {testData.length}</p>
                 )}
-               
+
             </Modal>
         </div>
     );
