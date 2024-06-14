@@ -46,3 +46,25 @@ tfoot td {
     font-style: italic;
    
 }
+.logout-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    background-color: rgb(229, 112, 0);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: rgb(173, 61, 0);
+}
