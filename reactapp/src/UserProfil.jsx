@@ -3,17 +3,23 @@ import NavMenu from "@/NavMenu.jsx";
 import './UserProfil.css';
 import { fetchData } from "./services/fetchData.jsx";
 import axios from "axios";
+import { getUserIdFromToken } from './services/SaveResults';
 
 function UserProfile() {
     const [profileInfo, setProfileInfo] = useState(null);
-    const headers = {
-        "Content-Type": "application/json",
-    };
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://localhost:7135/api/Profille", { headers, withCredentials: true });
+                const token = localStorage.getItem('token');
+                const id = getUserIdFromToken(token);
+                const response = await axios.get(`https://localhost:7135/api/Profille/${id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    withCredentials: true
+                });
                 setProfileInfo(response.data); 
             } catch (e) {
                 console.error(e);
@@ -69,7 +75,6 @@ function UserProfile() {
                             <td>{profile.scoreIn10}</td>
                             <td>{profile.average}</td>
                         </tr>
-                    ))}
                     </tbody>
                 </table>
             </div>

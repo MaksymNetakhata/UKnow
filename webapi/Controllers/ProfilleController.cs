@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.IdentityModel.Tokens.Jwt;
 using UKnow.Data;
 
 namespace webapi.Controllers
@@ -17,11 +18,18 @@ namespace webapi.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("{userId}")]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<Profile>>> GetInfo()
+        public async Task<ActionResult<IEnumerable<Profile>>> GetInfo(int userId)
         {
-            return Ok(await _context.Profile.ToListAsync());
+            var profile = await _context.Profile.FirstOrDefaultAsync(p => p.UserId == userId);
+
+            if (profile == null)
+            {
+                return NotFound("Profile not found.");
+            }
+
+            return Ok(profile);
         }
     }
 }
