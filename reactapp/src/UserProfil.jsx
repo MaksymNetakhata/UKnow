@@ -56,7 +56,7 @@ function UserProfile() {
                     </thead>
                     <tbody>
                     {profileInfo.map(profile => (
-                        <tr key={profile.user}>
+                        <tr key={profileInfo.id}>
                             <td>{profile.scoreIn1}</td>
                             <td>{profile.scoreIn2}</td>
                             <td>{profile.scoreIn3}</td>

@@ -86,7 +86,7 @@ export default function Profile() {
             setMessage('Registration successful');
             setAuthorized(true);
             localStorage.setItem('isAuthorized', true);
-            navigate('/User');
+            navigate('/Profile');
         } catch (error) {
             console.error('Login failed:', error);
             throw error;
