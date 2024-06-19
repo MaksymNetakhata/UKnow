@@ -43,18 +43,12 @@ namespace webapi.Controllers
 
             HttpContext.Response.Cookies.Append("cookies", token, new CookieOptions
             {
-                HttpOnly = false, // Доступно только через HTTP, не доступно через JavaScript
-                Secure = true,   // Использовать только через HTTPS
-                SameSite = SameSiteMode.Strict, // Политика SameSite
-                Expires = DateTime.UtcNow.AddHours(1) // Срок действия куки
+                HttpOnly = false,
+                Secure = true,   
+                SameSite = SameSiteMode.Strict, 
+                Expires = DateTime.UtcNow.AddHours(1) 
             });
-
-
-
             return Results.Ok(token);
-
-
-
         }
 
         //public async Task<IActionResult> Logout()

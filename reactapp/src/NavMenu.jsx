@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import './NavMenu.css';
-import { login } from "./services/Login.jsx";
 
 const NavMenu = () => {
     const [isAuthorized, setAuthorized] = useState(false);
